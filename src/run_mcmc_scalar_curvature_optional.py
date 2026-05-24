@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-28_R_fss_mcmc.py
+run_mcmc_scalar_curvature_optional.py
 ================================================================================
 Finite-Size Scaling of Scalar Curvature R(beta) via GPU-Accelerated MCMC
 for Google Colab (A100 GPU)
@@ -362,7 +362,7 @@ def compute_R_at_beta(
 # 6. MAIN R-FSS PIPELINE
 # ==============================================================================
 
-def run_R_fss_scan(
+def run_curvature_fss_scan(
     L_list: list = [4, 6, 8, 10, 12],
     num_envs: int = 200000,
     warmup: int = 2000,
@@ -487,9 +487,9 @@ def plot_R_results(results: dict, out_dir: str = "."):
     ax.grid(alpha=0.3)
 
     plt.tight_layout()
-    plt.savefig(os.path.join(out_dir, '28_R_fss_results.png'), dpi=150, bbox_inches='tight')
+    plt.savefig(os.path.join(out_dir, 'mcmc_scalar_curvature_fss_results.png'), dpi=150, bbox_inches='tight')
     plt.close()
-    print(f"Saved: {out_dir}/28_R_fss_results.png")
+    print(f"Saved: {out_dir}/mcmc_scalar_curvature_fss_results.png")
 
 
 # ==============================================================================
@@ -531,7 +531,7 @@ if __name__ == '__main__':
 
     overall_t0 = time.time()
 
-    results = run_R_fss_scan(
+    results = run_curvature_fss_scan(
         L_list=L_LIST,
         num_envs=NUM_ENVS,
         warmup=WARMUP,
@@ -547,7 +547,7 @@ if __name__ == '__main__':
     print(f"{'='*70}")
 
     # Save
-    pkl_path = os.path.join(out_dir, "R_fss_results.pkl")
+    pkl_path = os.path.join(out_dir, "mcmc_scalar_curvature_fss_results.pkl")
     with open(pkl_path, 'wb') as f:
         pickle.dump(results, f)
     print(f"Saved pickle: {pkl_path}")
@@ -559,7 +559,7 @@ if __name__ == '__main__':
         npz_data[prefix + 'beta'] = r['beta_list']
         npz_data[prefix + 'R'] = r['R']
 
-    npz_path = os.path.join(out_dir, "R_fss_results.npz")
+    npz_path = os.path.join(out_dir, "mcmc_scalar_curvature_fss_results.npz")
     np.savez_compressed(npz_path, **npz_data)
     print(f"Saved NPZ: {npz_path}")
 
@@ -582,6 +582,6 @@ if __name__ == '__main__':
     print("Look for increasing |R| with L near beta_c.")
 
     print(f"\n[Colab] Results in {out_dir}/")
-    print("  - R_fss_results.pkl / .npz")
-    print("  - 28_R_fss_results.png")
+    print("  - mcmc_scalar_curvature_fss_results.pkl / .npz")
+    print("  - mcmc_scalar_curvature_fss_results.png")
     print("  - checkpoint_R.pkl")

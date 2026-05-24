@@ -240,7 +240,7 @@ The main contribution is therefore a controlled falsification of an invariance c
 
 \section*{Code and data availability}
 
-Code, data, and reproduction scripts are available in the public GitHub repository \href{https://github.com/OZYW/fisher-ising-decoupling-windows}{OZYW/fisher-ising-decoupling-windows}.
+Code, data, and reproduction scripts are available in the public GitHub repository release \href{https://github.com/OZYW/fisher-ising-decoupling-windows/releases/tag/v1.0}{OZYW/fisher-ising-decoupling-windows v1.0}.
 
 \section*{Use of AI-assisted tools}
 
@@ -248,21 +248,21 @@ The author used AI-assisted tools during exploratory hypothesis generation, code
 
 \begin{figure}[ht]
 \centering
-\includegraphics[width=0.95\textwidth]{23_dense_rescan_with_repar.png}
-\caption{Exact dense rescan at $h=0.01$ with zero-field robustness summary.  Top row: $I_{\rm eff}=\log\kappa(\mathcal F)$ in $P_1=(\beta,h)$ and $P_2=(\beta,B)$.  Middle row: $\Delta=-dI_{\rm eff}/d\beta$ with positive-to-negative crossings marked.  Bottom left: $\beta_G^*$ versus Laplacian spectral gap for the weak-field path.  Bottom right: comparison of weak-field and zero-field exact crossings; circles are $P_1$ and squares are $P_2$.}
-\label{fig:dense_rescan}
+\includegraphics[width=0.95\textwidth]{figure1_exact_decoupling_windows.png}
+\caption{Exact decoupling-window scan at $h=0.01$ with zero-field robustness summary.  Top row: $I_{\rm eff}=\log\kappa(\mathcal F)$ in $P_1=(\beta,h)$ and $P_2=(\beta,B)$.  Middle row: $\Delta=-dI_{\rm eff}/d\beta$ with positive-to-negative crossings marked.  Bottom left: $\beta_G^*$ versus Laplacian spectral gap for the weak-field path.  Bottom right: comparison of weak-field and zero-field exact crossings; circles are $P_1$ and squares are $P_2$.}
+\label{fig:exact_windows}
 \end{figure}
 
 \begin{figure}[ht]
 \centering
-\includegraphics[width=0.88\textwidth]{24_scalar_curvature_grid4x4.png}
+\includegraphics[width=0.88\textwidth]{figure2_scalar_curvature_grid4x4.png}
 \caption{Scalar curvature $R(\beta)$ on the periodic Grid $4\times4$ at $h=0.01$, computed independently in $P_1=(\beta,h)$ and $P_2=(\beta,B)$.  The two coordinate computations agree to median relative error $4.1\times10^{-4}$.  $R$ is smooth at $N=16$ and shows no feature at the parameterization-dependent condition-number windows.}
 \label{fig:curvature}
 \end{figure}
 
 \begin{figure}[ht]
 \centering
-\includegraphics[width=0.88\textwidth]{29_R_mcmc_noise_diagnosis.png}
+\includegraphics[width=0.88\textwidth]{figure3_mcmc_noise_diagnostic.png}
 \caption{Recorded $L=4$ pilot MCMC scalar-curvature estimates and finite-difference SNR scaling.  The sign-flipping values are used only as a diagnostic of noise amplification in naive stencil-based MCMC curvature recovery.}
 \label{fig:R_noise}
 \end{figure}

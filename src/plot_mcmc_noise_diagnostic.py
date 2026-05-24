@@ -1,16 +1,19 @@
 """Generate the MCMC scalar-curvature noise-diagnosis plot.
 
 This script does not rerun MCMC.  It reads the recorded L=4 pilot values from
-../data/29_R_mcmc_noise_L4_pilot.csv and recreates the diagnostic figure used
-in the paper.  The underlying MCMC driver is 28_R_fss_mcmc.py.
+../data/mcmc_noise_L4_pilot.csv and recreates the diagnostic figure used
+in the paper.  The underlying MCMC driver is run_mcmc_scalar_curvature_optional.py.
 """
 
+import matplotlib
+
+matplotlib.use("Agg")
 import matplotlib.pyplot as plt
 import numpy as np
 from pathlib import Path
 
 BETA_C = np.log(1.0 + np.sqrt(2.0)) / 2.0  # Onsager exact ~0.4407
-DATA_PATH = Path(__file__).resolve().parent.parent / "data" / "29_R_mcmc_noise_L4_pilot.csv"
+DATA_PATH = Path(__file__).resolve().parent.parent / "data" / "mcmc_noise_L4_pilot.csv"
 
 
 def load_pilot_data(path: Path = DATA_PATH) -> tuple[np.ndarray, np.ndarray]:
@@ -98,7 +101,7 @@ if __name__ == '__main__':
     BETA, R = load_pilot_data()
     out_dir = Path(__file__).resolve().parent.parent / "figures"
     out_dir.mkdir(parents=True, exist_ok=True)
-    out_path = out_dir / '29_R_mcmc_noise_diagnosis.png'
+    out_path = out_dir / 'figure3_mcmc_noise_diagnostic.png'
     make_diagnosis_plot(out_path, BETA, R)
 
     # Print summary stats

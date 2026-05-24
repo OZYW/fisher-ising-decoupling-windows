@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Exact-enumeration dense scan for the decoupling-window paper.
+Exact-enumeration scan for the decoupling-window manuscript.
 
 This script is the deterministic source for the main condition-number evidence:
 
@@ -310,7 +310,7 @@ def write_summary_csv(
 ) -> None:
     os.makedirs(os.path.dirname(path), exist_ok=True)
     with open(path, "w", newline="") as f:
-        writer = csv.writer(f)
+        writer = csv.writer(f, lineterminator="\n")
         writer.writerow(["h", "parameterization", "topology", "lambda2", "beta_star"])
         for scan in scans:
             for param, beta_star in [("P1_beta_h", scan.beta_star_p1), ("P2_beta_B", scan.beta_star_p2)]:
@@ -446,7 +446,7 @@ def make_figure(
 
 def main() -> None:
     print("=" * 72)
-    print("Exact dense rescan with weak-field main path and h=0 robustness")
+    print("Exact decoupling-window scan with weak-field main path and h=0 robustness")
     print("=" * 72)
     print(f"N={N}, beta grid={len(BETA_GRID)} points, beta_c={BETA_C:.6f}")
 
@@ -489,10 +489,10 @@ def main() -> None:
     summarize("Zero-field robustness scan", robust_scan, lambda2_arr, topo_names, non_complete)
 
     root = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
-    figure_path = os.path.join(root, "figures", "23_dense_rescan_with_repar.png")
-    csv_path = os.path.join(root, "data", "exact_dense_summary.csv")
-    npz_path = os.path.join(root, "data", "exact_dense_rescan.npz")
-    pickle_path = os.path.join(root, "data", "exact_dense_rescan.pkl")
+    figure_path = os.path.join(root, "figures", "figure1_exact_decoupling_windows.png")
+    csv_path = os.path.join(root, "data", "exact_decoupling_summary.csv")
+    npz_path = os.path.join(root, "data", "exact_decoupling_rescan.npz")
+    pickle_path = os.path.join(root, "data", "exact_decoupling_rescan.pkl")
 
     write_summary_csv(csv_path, [main_scan, robust_scan], topo_names, lambda2s)
     save_npz(npz_path, [main_scan, robust_scan], topo_names, lambda2_arr)

@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-27_colab_fss_mcmc.py
+run_mcmc_fss_optional.py
 ================================================================================
 Finite-Size Scaling (FSS) of Decoupling Windows via GPU-Accelerated MCMC
 for Google Colab (A100 GPU)
@@ -770,9 +770,9 @@ def plot_fss_results(results: dict, out_dir: str = "."):
     ax.grid(alpha=0.3)
 
     plt.tight_layout()
-    plt.savefig(os.path.join(out_dir, '27_fss_main_results.png'), dpi=150, bbox_inches='tight')
+    plt.savefig(os.path.join(out_dir, 'mcmc_fss_main_results.png'), dpi=150, bbox_inches='tight')
     plt.close()
-    print(f"Saved: {out_dir}/27_fss_main_results.png")
+    print(f"Saved: {out_dir}/mcmc_fss_main_results.png")
 
     # --- Panel 5: R(beta) for selected L ---
     has_R = any('R' in results[L] for L in L_list)
@@ -791,9 +791,9 @@ def plot_fss_results(results: dict, out_dir: str = "."):
         ax.legend()
         ax.grid(alpha=0.3)
         plt.tight_layout()
-        plt.savefig(os.path.join(out_dir, '27_fss_scalar_curvature.png'), dpi=150, bbox_inches='tight')
+        plt.savefig(os.path.join(out_dir, 'mcmc_fss_scalar_curvature.png'), dpi=150, bbox_inches='tight')
         plt.close()
-        print(f"Saved: {out_dir}/27_fss_scalar_curvature.png")
+        print(f"Saved: {out_dir}/mcmc_fss_scalar_curvature.png")
 
 
 # ==============================================================================
@@ -955,6 +955,6 @@ if __name__ == '__main__':
     print("[Colab] Use the file browser on the left to download:")
     print(f"  - {out_dir}/fss_results.pkl")
     print(f"  - {out_dir}/fss_results.npz")
-    print(f"  - {out_dir}/27_fss_main_results.png")
-    print(f"  - {out_dir}/27_fss_scalar_curvature.png")
+    print(f"  - {out_dir}/mcmc_fss_main_results.png")
+    print(f"  - {out_dir}/mcmc_fss_scalar_curvature.png")
     print(f"  - {out_dir}/checkpoint.pkl  (resume state)")

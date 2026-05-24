@@ -1,0 +1,17 @@
+cff-version: 1.2.0
+message: "If you use this reproducibility package, please cite the manuscript and repository."
+title: "Parameterization-Dependent Decoupling Windows in Statistical Manifolds: An Empirical Study via Finite Ising Models"
+authors:
+  - family-names: "Ye"
+    given-names: "Wei"
+    orcid: "https://orcid.org/0009-0004-9737-3969"
+version: "1.0"
+date-released: "2026-05-24"
+repository-code: "https://github.com/OZYW/fisher-ising-decoupling-windows"
+license: "MIT"
+keywords:
+  - "Ising model"
+  - "Fisher information"
+  - "information geometry"
+  - "statistical manifolds"
+  - "exact enumeration"

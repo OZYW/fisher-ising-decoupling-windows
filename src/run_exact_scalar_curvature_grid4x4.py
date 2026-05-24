@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-24_scalar_curvature_grid4x4.py
+run_exact_scalar_curvature_grid4x4.py
 ================================================================
 Scalar curvature R(β) on the Grid 4×4 along the h=0.01 path.
 
@@ -411,7 +411,7 @@ plt.tight_layout()
 
 fig_dir = os.path.join(os.path.dirname(__file__), '..', 'figures')
 os.makedirs(fig_dir, exist_ok=True)
-OUT_PNG = os.path.join(fig_dir, "24_scalar_curvature_grid4x4.png")
+OUT_PNG = os.path.join(fig_dir, "figure2_scalar_curvature_grid4x4.png")
 plt.savefig(OUT_PNG, dpi=110, bbox_inches="tight")
 plt.close()
 print(f"\nSaved figure: {OUT_PNG}")

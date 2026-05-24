@@ -1,0 +1,6 @@
+# Tested core exact-enumeration environment.
+# The optional MCMC scripts additionally require requirements-optional.txt.
+#
+# Python: 3.9.6
+numpy==2.0.2
+matplotlib==3.9.4
