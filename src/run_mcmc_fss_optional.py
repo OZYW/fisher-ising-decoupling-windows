@@ -831,7 +831,7 @@ if __name__ == '__main__':
     #   scaling field h_c ~ L^(-15/8) for L>=8, shifting beta*_G away from
     #   the exact h=0 limit. h=0.001 is << h_c for all L in [4,12] while
     #   still breaking Z_2 symmetry enough to avoid bimodal M distributions
-    #   that corrupt Var(M) in the FIM. See 27b_h0_validation.py for details.
+    #   that corrupt Var(M) in the FIM. See check_zero_field_validation_optional.py for details.
     #   H_PATH is defined globally in the script header.
 
     # Parallel chains. A100 40GB can easily handle 200k+ for L<=12

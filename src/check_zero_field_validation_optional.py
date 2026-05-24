@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-27b_h0_validation.py
+check_zero_field_validation_optional.py
 ================================================================================
 Quick validation: L=4, h=0 MCMC vs exact enumeration (N=16).
 
